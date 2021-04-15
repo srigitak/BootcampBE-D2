@@ -3,20 +3,9 @@ const fastify = require('fastify')({ logger: true });
 const path = require("path");
 
 // Register plugins
-fastify.register(require("fastify-static"), {
-    root: path.join(__dirname, "public"),
-    prefix: "/",
-});
-fastify.register(require("fastify-static"), {
-    root: path.join(__dirname, "public/assets"),
-    prefix: "/assets",
-    decorateReplay: false,
-});
-fastify.register(require("fastify-static"), {
-    root: path.join(__dirname, "public/forms"),
-    prefix: "/forms",
-    decorateReplay: false,
-});
+fastify.register(require("fastify-static"), require("./config/static").public);
+fastify.register(require("fastify-static"), require("./config/static").assets);
+fastify.register(require("fastify-static"), require("./config/static").forms);
 
 // Declare a route
 fastify.get('/', async(request, reply) => {
