@@ -1,6 +1,5 @@
 // Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true });
-const path = require("path");
 
 // Register plugins
 fastify.register(require("fastify-static"), require("./config/static").public);
