@@ -1,0 +1,15 @@
+{
+    "name": "bootcampbackend",
+    "version": "1.0.0",
+    "description": "bootcamp ramadhan",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index"
+    },
+    "author": "Gitt",
+    "license": "ISC",
+    "dependencies": {
+        "fastify": "^3.14.2"
+    }
+}
